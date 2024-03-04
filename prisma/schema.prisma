@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String           @id @default(cuid()) @map("id")
+  identityProvider IdentityProvider @map("identity_provider")
+  email            String           @map("email")
+  password         String?          @map("password")
+  Card             Card[]
+  HeldCard         HeldCard[]
+
+  @@map("user")
+}
+
+model Card {
+  id         String   @id @default(cuid()) @map("id")
+  userId     String   @map("user_id")
+  image      String   @map("image") @db.Text
+  name       String   @map("name")
+  email      String   @map("email")
+  phone      String   @map("phone")
+  address    String   @map("address")
+  occupation String   @map("occupation")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @default(now()) @map("updated_at")
+
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  HeldCard HeldCard[]
+
+  @@map("card")
+}
+
+model HeldCard {
+  id        String   @id @default(cuid()) @map("id")
+  userId    String   @map("user_id")
+  cardId    String   @map("card_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  card Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  @@map("received_card")
+}
+
+enum IdentityProvider {
+  CREDENTIALS @map("CREDENTIALS")
+  GOOGLE      @map("GOOGLE")
+
+  @@map("identity_provider")
+}

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply w-full h-full text-slate-700 bg-gray-200;
+  }
+}
+
+@layer components {
+  .title {
+    @apply text-3xl font-bold mb-8;
+  }
+
+  .subtitle {
+    @apply text-xl font-bold mb-4;
+  }
+
+  .divider-text {
+    @apply text-lg py-2 px-4 text-gray-400 flex items-center
+      before:h-px before:bg-gray-400
+      before:relative before:flex-grow before:right-4
+      after:h-px after:bg-gray-400
+      after:relative after:flex-grow after:left-4;
+  }
+}
+
+@layer utilities {
+}
