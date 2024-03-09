@@ -1,3 +1,9 @@
+/******************************************************************
+Author: Appy.Yo software engineering team-
+This file is configuring the tailwind css components using @appy that will be reusable throughout the program. 
+******************************************************************/
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

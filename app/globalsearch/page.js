@@ -2,7 +2,6 @@
 
 import { signOut, useSession } from "next-auth/react";
 import {
-  Avatar,
   Button,
   Dropdown,
   DropdownItem,
@@ -11,8 +10,6 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  Tab,
-  Tabs,
 } from "@nextui-org/react";
 import { FaCircleUser, FaPenToSquare } from "react-icons/fa6";
 import { useRouter, useSearchParams } from "next/navigation";

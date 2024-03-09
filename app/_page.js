@@ -1,8 +1,7 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react"; // hooks for authentication handling
 import {
-  Avatar,
   Button,
   Dropdown,
   DropdownItem,
@@ -11,12 +10,11 @@ import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   Tab,
   Tabs,
-} from "@nextui-org/react";
-import { FaCircleUser, FaPenToSquare } from "react-icons/fa6";
-import { useRouter, useSearchParams } from "next/navigation";
+} from "@nextui-org/react"; // User interface components  
+import { FaCircleUser, FaPenToSquare } from "react-icons/fa6"; //User interface components from Font Awesome 6 React Library
+import { useRouter, useSearchParams } from "next/navigation"; 
 import { useEffect, useState, useRef } from "react";
 import Card from "@/components/Card";
 import Link from 'next/link'
