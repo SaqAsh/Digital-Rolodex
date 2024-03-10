@@ -4,6 +4,7 @@ export async function POST(request, context) {
   try {
     const token = await getToken({ req: request });
     const body = await request.json();
+    console.log(token);
 
     // where filters for cards created
     let where_filters = { userId: token["id"] }

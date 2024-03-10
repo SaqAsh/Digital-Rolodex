@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -33,13 +32,14 @@ export default function AuthenticationForm({ type }) {
       label: "Sign Up",
       remainder: "for free.",
       link: "/signup",
+      forgotPassword: "/forgot-password",
     },
     signup: {
       question: "Already have an account?",
       label: "Login",
       remainder: "instead.",
       link: "/login",
-    },
+    }
   };
 
   async function onSubmit(data) {
@@ -121,6 +121,14 @@ export default function AuthenticationForm({ type }) {
             >
               {buttonLabel}
             </Button>
+            {/* This is for the forgot password button rendering, it is a conditional render */}
+            {type === "login" && (
+            <div className="text-center my-2">
+              <Link href={otherFormMap.login.forgotPassword}>
+                  Forgot Password?
+              </Link>
+            </div>
+          )}
             <span className={"divider-text"}>Or</span>
             <Button
               className={"button bg-white"}
