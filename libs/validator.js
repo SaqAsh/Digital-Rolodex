@@ -9,6 +9,12 @@ const password = z
       "Password must be at least 8 characters and contain an uppercase letter, lowercase letter, and number",
   });
 
+export const ResetPassword = z.object({
+  email: z.string().email({
+    message: "Email is required in this field",
+  }),
+});
+
 const signup = z
   .object({
     email: z.string().min(1, NON_EMPTY_MESSAGE).email(),

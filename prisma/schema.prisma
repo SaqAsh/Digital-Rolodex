@@ -12,15 +12,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+  model User {
   id               String           @id @default(cuid()) @map("id")
   identityProvider IdentityProvider @map("identity_provider")
   email            String           @map("email")
   password         String?          @map("password")
   Card             Card[]
   HeldCard         HeldCard[]
+  PasswordResetToken PasswordResetToken?
 
   @@map("user")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String   @unique
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("password_reset_token")
 }
 
 model Card {

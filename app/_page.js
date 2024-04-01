@@ -100,7 +100,7 @@ export default function Page() {
           <NavbarBrand>
             <span
               className={
-                "flex items-center space-x-2 text-3xl font-bold text-primary"
+                "flex items-center space-x-2 text-3xl font-bold  text-teal-400"
               }
             >
               Digital Rolodex
@@ -123,7 +123,7 @@ export default function Page() {
               <DropdownMenu aria-label="Profile Actions" variant="flat">
                 <DropdownItem key="profile" className="h-14 gap-2">
                   <p className="font-semibold">Signed in as</p>
-                  <p className="font-semibold">{session.data.user.email}</p>
+                  <p className="font-semibold text-teal-400">{session.data.user.email}</p>
                 </DropdownItem>
                 <DropdownItem
                   color="danger"
@@ -143,7 +143,7 @@ export default function Page() {
           <div
             className={"relative w-full flex  justify-center items-center mb-4"}
           >
-            <h1 className={"w-full text-4xl font-semibold text-center mx-auto"}>
+            <h1 className={"w-full text-4xl font-semibold text-center mx-auto py-5"}>
               My Collection
             </h1>
             <div className={"absolute right-0"}>
@@ -151,7 +151,7 @@ export default function Page() {
                 color="primary"
                 variant={"solid"}
                 size={"lg"}
-                className={"w-32"}
+                className={"w-32 bg-teal-400 hover:bg-teal-200"}
                 onClick={() => router.push("/cards/create")}
                 startContent={<FaPenToSquare />}
               >
@@ -161,11 +161,11 @@ export default function Page() {
           </div>
 
 
-          <div className="relative inline-block text-left flex">
+          <div className="relative inline-block text-left flex py-6">
             <button
               id="dropdownHelperButton"
               onClick={toggleDropdown}
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-teal-400 hover:bg-teal-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               type="button"
             >
               Filter by Occupation
@@ -272,10 +272,10 @@ export default function Page() {
     return (
       <div
         className={
-          "flex flex-col h-full w-full justify-center items-center content-center"
+          "flex flex-col h-full w-full justify-center items-center content-center bg-gradient-to-r from-indigo-800 to-teal-400"
         }
       >
-        <span className={"text-4xl font-bold text-primary mb-12"}>
+        <span className={"text-4xl font-bold  mb-12 text-white"}>
           Digital Rolodex
         </span>
         <div className={"justify-center items-center content-center"}>
@@ -284,7 +284,7 @@ export default function Page() {
             size="lg"
             radius="lg"
             variant="solid"
-            className={"m-4"}
+            className={"m-4 bg-teal-400 boarder boarder-teal-500"}
             onClick={() => router.push("/signup")}
           >
             Sign Up
@@ -293,8 +293,8 @@ export default function Page() {
             color="primary"
             size="lg"
             radius="lg"
-            variant="bordered"
-            className={"m-4"}
+            variant="solid"
+            className={"m-4 bg-teal-400 border border-teal-500"}
             onClick={() => router.push("/login")}
           >
             Login
