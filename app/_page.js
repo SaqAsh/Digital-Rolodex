@@ -231,7 +231,7 @@ export default function Page() {
 
           <Tabs
             radius="full"
-            color={"primary"}
+            color={"teal-400"}
             selectedKey={activeTab}
             onSelectionChange={(value) => setActiveTab(value)}
             fullWidth

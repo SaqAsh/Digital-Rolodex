@@ -72,7 +72,7 @@ export default function Page({}) {
           color="primary"
           variant={"solid"}
           size={"lg"}
-          className={"mt-4 w-72"}
+          className={"mt-4 w-72 bg-teal-400"}
           onClick={addOnClick}
         >
           Add

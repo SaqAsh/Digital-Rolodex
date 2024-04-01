@@ -146,7 +146,7 @@ export default function CardForm({
         color="primary"
         variant={"solid"}
         size={"lg"}
-        className={"mt-4"}
+        className={"mt-4 bg-teal-400"}
         isLoading={isSubmitting}
       >
         {id ? "Update" : "Create"}
@@ -157,7 +157,7 @@ export default function CardForm({
           color="danger"
           variant={"solid"}
           size={"lg"}
-          className={"mt-4"}
+          className={"mt-4 bg-teal-400"}
           onClick={deleteOnClick}
         >
           Delete
